@@ -1,12 +1,21 @@
-<?php>
+<?php
 
-    $user = "root"; 
-    $pass = "usbw";
-    $host = "localhost";
-    $db = "folha_pgto"; 
-    $connectDB = mysql_connect ($host, $user, $pass) or die (mysql_error()); 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
-    mysql_select_db($db) or die ("Erro ao conectar ao Banco");
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "usbw";
+    $dbname = "folha_pgto";
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    
+    if ($conn->connect_error) 
+    {
+        die("Conexão falhou: " . $conn->connect_error);
+    }
+
 
 
 ?>
