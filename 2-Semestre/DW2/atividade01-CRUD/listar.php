@@ -47,7 +47,7 @@
         <table class="table my-3" >
             <thead>
                 <tr>
-                <th>ID</th>
+                    <th>ID</th>
                     <th>Nome</th>
                     <th>Cargo</th>
                     <th>Data de Admissão</th>
@@ -76,9 +76,9 @@
                             echo "<td>" . $row["data_admissao"] ."</td>";
                             echo "<td>" . $row["cargo"] . "</td>";
                             echo "<td>" . $row["qtde_salarios"] . "</td>";
-                            echo "<td>" . $row["salario_bruto"] . "</td>";
-                            echo "<td>" . $row["inss"] . "</td>";
-                            echo "<td>" . $row["salario_liquido"] . "</td>";
+                            echo "<td> R$" . $row["salario_bruto"] . "</td>";
+                            echo "<td> R$" . $row["inss"] . "</td>";
+                            echo "<td> R$" . $row["salario_liquido"] ."</td>";
                             echo "<td colspan='8'>";
                             echo "<a href='editar.php?n_registro=".$row['n_registro']."' class=' btn btn-primary mx-1'>Editar </a>";
                             echo "<a href='excluir.php?n_registro=".$row['n_registro']."'class=' btn btn-danger'> Excluir</a>";

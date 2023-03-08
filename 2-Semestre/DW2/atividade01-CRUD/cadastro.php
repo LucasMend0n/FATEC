@@ -23,6 +23,7 @@
         echo "<h1>Nao e permitido cadastrar com campos vazios</h1>"; 
 		echo "<hr>";
         echo "</center>";
+        header("refresh:2; url=index.html");
         $checkName = "SELECT nome_funcionario FROM tb_funcionarios WHERE nome_funcionario = '$nome'"; 
         $checkNameExecute = $conn->query($checkName);
         if($checkNameExecute->num_rows > 0){
