@@ -5,3 +5,20 @@
 #fd_campos{
     width: 100vh;
 }
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+.tabela{
+    margin-top: 3em;
+
+}
+.btn1{
+    padding: 2em;
+}
