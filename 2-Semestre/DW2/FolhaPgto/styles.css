@@ -6,10 +6,6 @@
     width: 100vh;
 }
 
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
 th, td {
     padding: 5px;
     text-align: left;
@@ -19,6 +15,20 @@ th, td {
     margin-top: 3em;
 
 }
+
 .btn1{
     padding: 2em;
+}
+
+#titulo{
+    text-align: center;
+}
+
+.form-control{
+    margin: 1em 0;
+}
+
+td:last-child {
+    width: 150px; /* ou um valor maior, se necessário */
+    white-space: nowrap;
 }

@@ -8,7 +8,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "usbw";
-    $dbname = "folha_pgto";
+    $dbname = "folha_pagto";
     $conn = new mysqli($servername, $username, $password, $dbname);
     
     if ($conn->connect_error) 
