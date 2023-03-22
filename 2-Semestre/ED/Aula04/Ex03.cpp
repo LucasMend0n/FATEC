@@ -16,16 +16,16 @@ int main(){
 	cout<<"Digite um numero decimal: "<<endl;
 	cin>>x;
 	
-	z = x % 16;
-	w = x / 16;
+	z = x % 8;
+	w = x / 8;
 	
 	Push(&P1,z);
 	
 	while(w != 0){
 		
 		x = w;
-		z = x % 16;
-		w = x / 16;
+		z = x % 8;
+		w = x / 8;
 		
 		Push(&P1, z);
 		
