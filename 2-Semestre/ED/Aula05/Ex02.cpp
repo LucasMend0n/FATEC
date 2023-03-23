@@ -14,9 +14,6 @@ int main(){
 	
 		int option;
 		int tamanho = 0;
-	
-	
-		
 		
 		do{
 			
@@ -26,7 +23,6 @@ int main(){
 		cout<<"4.Mostrar os elementos da pilha\n";
 		cout<<"5.Sair\n";
 		cin>>option;
-			
 			
 			switch(option){
 			case 1:
@@ -51,8 +47,7 @@ int main(){
 				}
 				cout<< " } \n";
 				break;
-			case 5:
-				break;		
+				
 				}
 				
 		}while(option != 5);
