@@ -35,7 +35,7 @@ public class Ex01 {
             System.out.println("BANCO DAORA");
             System.out.println("Conta: " + acc.getId());
             System.out.println("Titular: " + acc.getOwner());
-            System.out.println("Saldo inicial:" + acc.getBalance());
+            System.out.println("Saldo: " + acc.getBalance());
             System.out.println("-----------------------------");
             System.out.println("1) DEPÓSITO");
             System.out.println("2) SAQUE");
@@ -54,7 +54,7 @@ public class Ex01 {
                     System.out.println("Digite o valor a ser sacado: ");
                     amount = Double.parseDouble(sc.nextLine());
                     acc.saca(amount); 
-                    System.out.printf("Saldo atual: " + acc.getBalance());
+                    System.out.println("Saldo atual: " + acc.getBalance());
                     break;
                 case 3: 
                     System.out.println("Digite o valor da taxa de rendimento: ");
