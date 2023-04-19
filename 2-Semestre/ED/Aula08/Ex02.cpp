@@ -1,13 +1,13 @@
 #include <iostream>
 #include <stdlib.h>
 #include "Fila.h"
-#include "Pilha.h"
+#include "pilha.h"
 
 using namespace std;
 int main()
 {
     system("CLS");
-    int elem, op, x, i, y;
+    int elem, op, x, i, y, removed;
 
     struct queue q;
     inicFila(&q);
@@ -15,9 +15,12 @@ int main()
     struct queue copyQueue;
     inicFila(&copyQueue);
 
-    Pilha stack;
+    struct Pilha stack;
+    struct Pilha copyStack;
     IniPilha(&stack);
+    IniPilha(&copyStack);
 
+    int cont = 0; 
     /*Loop principal: para sair escolher opção 4*/
     while (op != 8)
     {
@@ -57,6 +60,8 @@ int main()
                 cout << "Entre com um valor : ";
                 cin >> elem;
                 insFila(&q, elem);
+                cont ++;
+
             }
             break;
         case 2:
@@ -68,8 +73,9 @@ int main()
             else
             {
                 x = remFila(&q);
-                cout << "Valor removido" << x << endl;
+                cout << "Valor removido: " << x << endl;
                 system("PAUSE");
+                cont --; 
             }
             break;
         case 3:
@@ -81,11 +87,14 @@ int main()
             else
             {
                 y = guardainicio(&q);
+                cout << "FILA :{ ";
                 while (!filaVazia(&q))
                 {
                     x = remFila(&q);
-                    cout << x;
+
+                    cout << x << " ";
                 }
+                cout << "} " << endl; 
             }
             retornainicio(&q, y);
             system("PAUSE");
@@ -105,24 +114,39 @@ int main()
                     Push(&stack, remFila(&copyQueue));
                 }
 
-                cout << "FILA INVERTDA: {";
+                cout << "FILA INVERTDA: { ";
                 while (!pilhavazia(&stack))
                 {
-                    cout << Pop(&stack) << ", ";
+                    cout << Pop(&stack) << " ";
                 }
-                cout << "}";
+                cout << "}" << endl;
                 system("PAUSE");
                 break;
             }
         case 5:
-        break; 
+            cout << "O numero de elementos na fila eh: " << cont << endl; 
+            system("PAUSE");
+            break; 
 
         case 6:
             copyQueue = q;
-            int removed = remFila(&copyQueue);
+            removed = remFila(&copyQueue);
             cout << "PRIMEIRO ELEMENTO DA FILA: " << removed << endl;
             system("PAUSE");
             break;
+        
+        case 7:
+            
+            copyQueue = q;
+            copyStack = stack;
+            while (!filaVazia(&copyQueue))
+            {
+                Push(&copyStack, remFila(&copyQueue)); 
+            }
+            cout << "Ultimo elemento da fila: " << Top(&copyStack) << endl; 
+            system("Pause"); 
+            break;         
+        
         }
     }
 }
