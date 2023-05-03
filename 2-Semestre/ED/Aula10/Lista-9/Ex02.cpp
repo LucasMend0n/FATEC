@@ -9,13 +9,10 @@ using namespace std;
 
 void toBinary(int number)
 {
-if(number <1){
-    cout << number; 
-}else{
-    
- 
-}
-
+    if(number /2 !=0 ){
+        toBinary(number /2); 
+    }
+    cout << number % 2; 
 }
 
 int main()
