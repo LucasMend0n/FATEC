@@ -8,6 +8,20 @@ namespace Biblioteca
 {
     class Livros
     {
-        public int codlivro;
+        public int CodLivro { get; set; }
+        public string Autor { get; set; }
+        public string Titulo { get; set; }
+        public int Ano { get; set; }
+
+        public Livros()
+        {
+        }
+
+        public Livros(string autor, string titulo, int ano)
+        {
+            Autor = autor;
+            Titulo = titulo;
+            Ano = ano;
+        }
     }
 }
