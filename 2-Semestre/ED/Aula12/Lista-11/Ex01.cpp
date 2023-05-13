@@ -60,18 +60,17 @@ bool FilaDinamica::vazia(){
 }
 
 void FilaDinamica::inserir(int numero){
-    if(cheia()){
-        cout << "Fila cheia Impossivel inserir novos elementos\n"; 
-    }else{
+        
         Node* newNode = new Node; 
         newNode->value = numero; 
         newNode->next = NULL;
-        if(first == NULL){
-            first = newNode; 
-        }else{
-            last->next = newNode; 
-        }
-    }
+     if(first == 0){
+        first = newNode; 
+        last = newNode; 
+     }else{
+        last->next = newNode; 
+        last = newNode; 
+     }
 }
 
 int FilaDinamica::remover(){

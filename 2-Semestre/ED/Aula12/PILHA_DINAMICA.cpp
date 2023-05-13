@@ -5,16 +5,17 @@ using namespace std;
 
 class Pilha
 {
-  int info;    // membros da classe pilha
-  Pilha *next; // ponteiro que armazena o pr�ximo 			endere�o
+  int info;
+  Pilha *next;
+
 public:
-  Pilha();          // construtor: sempre � executado quando 		                 criamos um objeto
-  void Push(int n); // inserir elemento
-  int Pop();        // remover elemento
-  void Imprime();   // listar conte�do da pilha
+  Pilha();
+  void Push(int n);
+  int Pop();
+  void Imprime();
 };
-Pilha *TOPO; // Tipo do ponteiro externo:
-             //           Pilha,   que representa o nodo
+Pilha *TOPO;
+
 Pilha::Pilha()
 {
   info = 0;
@@ -38,7 +39,7 @@ int Pilha::Pop()
   }
   temp = this->info;
   TOPO = this->next;
-  delete (this); // destrutor da classe
+  delete (this);
   return (temp);
 }
 
@@ -60,7 +61,7 @@ void Pilha::Imprime()
 
 int main()
 {
-  // system("CLS"); �
+
   Pilha *pp;
   int valor;
   int escolha;
@@ -70,18 +71,18 @@ int main()
   do
   {
     system("CLS");
-    cout << "                     MENU PRINCIPAL  \n\n\n";
-    cout << "\n       (1) - Insere um elemento na Pilha";
-    cout << "\n      (2) - Remove um elemento da Pilha";
-    cout << "\n      (3) - Imprime a Pilha";
-    cout << "\n      (4) - Para SAIR" << endl;
+    cout << "MENU PRINCIPAL \n\n\n";
+    cout << "(1) - Insere um elemento na Pilha";
+    cout << "(2) - Remove um elemento da Pilha";
+    cout << "(3) - Imprime a Pilha";
+    cout << "(4) - Para SAIR\n";
     cin >> escolha;
     switch (escolha)
     {
     case 1:
       system("CLS");
       pp = new Pilha();
-      cout << "\Entre com um numero : ";
+      cout << "\nEntre com um numero : ";
       cin >> valor;
       pp->Push(valor);
       break;

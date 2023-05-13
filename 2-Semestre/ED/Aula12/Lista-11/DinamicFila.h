@@ -5,84 +5,100 @@
 
 using namespace std;
 
-class Node{
-    public: 
-    int value; 
+class Node
+{
+public:
+    int value;
     Node *next;
+};
 
-}; 
-
-class FilaDinamica{
-    private: 
+class FilaDinamica
+{
+private:
     Node *first;
     Node *last;
 
-    public: 
+public:
     void inserir(int numero);
-    bool vazia(); 
-    bool cheia(); 
+    bool vazia();
+    bool cheia();
     int remover();
-    void imprimir();   
+    void imprimir();
+};
 
-}; 
-
-FilaDinamica::FilaDinamica(){
+FilaDinamica::FilaDinamica()
+{
     first = NULL;
     last = NULL;
 }
 
-bool FilaDinamica::cheia(){
-    Node *temp; 
-    try{
-        temp = new Node; 
+bool FilaDinamica::cheia()
+{
+    Node *temp;
+    try
+    {
+        temp = new Node;
         delete temp;
-        return false; 
-    }catch(bad_alloc ex){
-        return true; 
+        return false;
+    }
+    catch (bad_alloc ex)
+    {
+        return true;
     }
 }
 
-bool FilaDinamica::vazia(){
+bool FilaDinamica::vazia()
+{
     return first == NULL;
 }
 
-void FilaDinamica::inserir(int numero){
-    if(cheia()){
-        cout << "Fila cheia! Impossivel inserir novos elementos\n"; 
-    }else{
-        Node *newNode = new Node; 
-        newNode->value = numero; 
+void FilaDinamica::inserir(int numero)
+{
+    if (cheia())
+    {
+        cout << "Fila cheia Impossivel inserir novos elementos\n";
+    }
+    else
+    {
+        Node *newNode = new Node;
+        newNode->value = numero;
         newNode->next = NULL;
-        if(first == NULL){
-            first = newNode; 
-        }else{
-            last->next = newNode; 
+        if (first == NULL)
+        {
+            first = newNode;
+        }
+        else
+        {
+            last->next = newNode;
         }
     }
 }
 
-int FilaDinamica::remover(){
-    if(vazia()){
-        cout << "Fila vazia! Impossivel remover elementos\n"; 
-        Node *temp = first; 
-        int numero = first->value; 
+int FilaDinamica::remover()
+{
+    if (vazia())
+    {
+        cout << "Fila vazia Impossivel remover elementos\n";
+        Node *temp = first;
+        int numero = first->value;
         first = first->next;
-        if(first == NULL){
-            last = NULL; 
+        if (first == NULL)
+        {
+            last = NULL;
         }
-        delete temp; 
+        delete temp;
         return numero;
     }
 }
 
-void FilaDinamica::imprimir(){
-    Node* temp = first; 
-    cout << "Fila ={ "; 
+void FilaDinamica::imprimir()
+{
+    Node *temp = first;
+    cout << "Fila ={ ";
     while (temp != NULL)
     {
-         cout << temp->value << " "; 
-         temp = temp->next; 
+        cout << temp->value << " ";
+        temp = temp->next;
     }
     cout << "}\n";
-    
 }
