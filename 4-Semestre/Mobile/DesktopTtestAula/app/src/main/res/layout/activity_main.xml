@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+        <TextView
+                android:id ="@+id/txtPeso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quanto você pesa: "
+        />
+        <EditText
+            android:id="@+id/editPeso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+        />
+        <TextView
+        android:id ="@+id/txtAltura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Qual sua altura: "
+        />
+        <EditText
+        android:id="@+id/editAltura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+
+            />
+
+    <TextView
+        android:id ="@+id/txtIMC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        />
+    <Button
+        android:id = "@+id/btn_calc"
+        android:layout_width = "wrap_content"
+        android:layout_height="wrap_content"
+        android:text ="Calcular"
+        />
+
+
+</LinearLayout>
